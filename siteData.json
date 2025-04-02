@@ -62,7 +62,7 @@
         "glossary": "Glossary",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
-        "deleting-a-person": "Deleting a person",
+        "deleting-a-loan": "Deleting a loan",
         "saving-data": "Saving data"
       },
       "headingKeywords": {}
@@ -137,14 +137,6 @@
       "title": "",
       "headings": {
         "wanted": "Wanted"
-      },
-      "headingKeywords": {}
-    },
-    {
-      "src": "team/johndoe.md",
-      "title": "John Doe's Project Portfolio Page",
-      "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
       },
       "headingKeywords": {}
     }
