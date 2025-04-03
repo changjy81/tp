@@ -105,6 +105,7 @@
     },
     {
       "src": "UserGuide.md",
+      "title": "User Guide",
       "headings": {
         "wanted-user-guide": "Wanted User Guide",
         "value-proposition": "Value Proposition",
