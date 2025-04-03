@@ -233,7 +233,7 @@ with(this){return _c('p',[_c('strong',[_v("Use case: "),_c('code',{pre:true,attr
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to add a new loan with details (e.g. borrower, tags).")])]),_v(" "),_c('li',[_c('p',[_v("System records the new loan in the loan list.")])]),_v(" "),_c('li',[_c('p',[_v("System confirms that the loan has been successfully added.\nUse case ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to add a new loan with borrower's name.")])]),_v(" "),_c('li',[_c('p',[_v("System records the new loan in the loan list.")])]),_v(" "),_c('li',[_c('p',[_v("System confirms that the loan has been successfully added.\nUse case ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
@@ -413,6 +413,6 @@ with(this){return _c('h3',{attrs:{"id":"saving-data"}},[_v("Saving data"),_c('a'
 with(this){return _c('ol',[_c('li',[_c('p',[_v("Dealing with missing/corrupted data files")]),_v(" "),_c('ol',[_c('li',[_c('em',[_v("{explain how to simulate a missing/corrupted file, and the expected behavior}")])])])]),_v(" "),_c('li',[_c('p',[_c('em',[_v("{ more test cases …​ }")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Thu, 3 Apr 2025, 22:14:02 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Thu, 3 Apr 2025, 23:37:46 GMT+8]")])])])}
 }];
   
