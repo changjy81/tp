@@ -227,37 +227,22 @@ with(this){return _c('h3',{attrs:{"id":"use-cases"}},[_v("Use cases"),_c('a',{st
 with(this){return _c('p',[_v("(For all use cases below, the "),_c('strong',[_v("System")]),_v(" is the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("LoanBook")]),_v(" and the "),_c('strong',[_v("Actor")]),_v(" is the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("user")]),_v(", unless specified otherwise)")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Use case: Track total amount of money owed")])])}
-},function anonymous(
-) {
-with(this){return _c('p',[_c('strong',[_v("MSS")])])}
-},function anonymous(
-) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("Loan issuer requests to view the total amount of money owed.")])]),_v(" "),_c('li',[_c('p',[_v("System calculates and displays the total outstanding loan amount.")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
-},function anonymous(
-) {
-with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
-},function anonymous(
-) {
-with(this){return _c('ul',[_c('li',[_v("2a. No outstanding loans exists.\n2a.1. System displays a message indicating that there are no outstanding loans.\nUse Case Ends.")]),_v(" "),_c('li',[_v("1a. No outstanding loans exists.\n"),_c('ul',[_c('li',[_v("1a.1. System displays a message indicating that there are no outstanding loans.")]),_v(" "),_c('li',[_v("Use Case Ends.")])])])])}
-},function anonymous(
-) {
 with(this){return _c('p',[_c('strong',[_v("Use case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Add")]),_v(" a New Loan")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to add a new loan with details (e.g. amount, borrower, due date).")])]),_v(" "),_c('li',[_c('p',[_v("System records the new loan in the loan list.")])]),_v(" "),_c('li',[_c('p',[_v("System confirms that the loan has been successfully added.\nUse case ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to add a new loan with details (e.g. borrower, tags).")])]),_v(" "),_c('li',[_c('p',[_v("System records the new loan in the loan list.")])]),_v(" "),_c('li',[_c('p',[_v("System confirms that the loan has been successfully added.\nUse case ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("1a. The person details are incomplete or invalid.\n"),_c('ul',[_c('li',[_v("1a.1. System displays an error message and tells the user the correct format to enter.")]),_v(" "),_c('li',[_v("Use Case Resumes at Step 1.")])])])])}
+with(this){return _c('ul',[_c('li',[_v("1a. The loans details are incomplete or invalid.\n"),_c('ul',[_c('li',[_v("1a.1. System displays an error message and tells the user the correct format to enter.")]),_v(" "),_c('li',[_v("Use Case Resumes at Step 1.")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Use case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Delete")]),_v(" a loan")])])}
+with(this){return _c('p',[_c('strong',[_v("Use case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Delete")]),_v(" a Loan")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
@@ -278,28 +263,28 @@ with(this){return _c('p',[_c('strong',[_v("Use case: "),_c('code',{pre:true,attr
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to view the list of current people.")])]),_v(" "),_c('li',[_c('p',[_v("System retrieves and displays the list of people, and their outstanding loans.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to view the list of current loans.")])]),_v(" "),_c('li',[_c('p',[_v("System retrieves and displays the list of loans.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("1a. No people with loans exists.\n"),_c('ul',[_c('li',[_v("1a.1. System displays a message indicating that there are no loans that need to be returned.")]),_v(" "),_c('li',[_v("Use Case Ends")])])])])}
+with(this){return _c('ul',[_c('li',[_v("1a. No loans exists.\n"),_c('ul',[_c('li',[_v("1a.1. System displays a message indicating that there are no loans that need to be returned.")]),_v(" "),_c('li',[_v("Use Case Ends")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Use Case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Increase")]),_v(" a Persons Loan Amount")])])}
+with(this){return _c('p',[_c('strong',[_v("Use Case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Increase")]),_v(" a Loan Amount")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to add a loan amount to a specific person's ID, and records the date")])]),_v(" "),_c('li',[_c('p',[_v("System creates a new add loan transaction")])]),_v(" "),_c('li',[_c('p',[_v("System adds transaction to the person's loan history")])]),_v(" "),_c('li',[_c('p',[_v("System updates and displays total amount loaned and total amount to be repaid")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to add a loan amount to a loan ID, and records the date of the transaction")])]),_v(" "),_c('li',[_c('p',[_v("System creates a new add loan transaction")])]),_v(" "),_c('li',[_c('p',[_v("System adds transaction to the loan history")])]),_v(" "),_c('li',[_c('p',[_v("System updates and displays total amount loaned and total amount to be repaid")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("1a. No person with the given ID exists.\n"),_c('ul',[_c('li',[_v("1a.1. System displays a message indicating that an invalid ID is being called.")]),_v(" "),_c('li',[_v("Use Case Ends.")])])])])}
+with(this){return _c('ul',[_c('li',[_v("1a. No loan with the given ID exists.\n"),_c('ul',[_c('li',[_v("1a.1. System displays a message indicating that an invalid ID is being called.")]),_v(" "),_c('li',[_v("Use Case Ends.")])])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Use Case:"),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Repay")]),_v(" a Loan Amount in Full or Partially")])])}
@@ -308,13 +293,13 @@ with(this){return _c('p',[_c('strong',[_v("Use Case:"),_c('code',{pre:true,attrs
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to repay a loan amount to a specific person's ID, and records the date")])]),_v(" "),_c('li',[_c('p',[_v("System creates a new repay loan transaction")])]),_v(" "),_c('li',[_c('p',[_v("System adds transaction to the person's loan history, and displays total amount loaned and total amount to be repaid")])]),_v(" "),_c('li',[_c('p',[_v("System display repaid success message.")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to repay a loan amount to a loan ID, and records the date of the transaction")])]),_v(" "),_c('li',[_c('p',[_v("System creates a new repay loan transaction")])]),_v(" "),_c('li',[_c('p',[_v("System adds transaction to the loan history, and displays total amount loaned and total amount to be repaid")])]),_v(" "),_c('li',[_c('p',[_v("System display repaid success message.")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("1a. No person with the given ID exists.\n"),_c('ul',[_c('li',[_v("1a.1. System displays a message indicating that an invalid ID is being called.")]),_v(" "),_c('li',[_v("Use Case Ends.")])])])])}
+with(this){return _c('ul',[_c('li',[_v("1a. No loan with the given ID exists.\n"),_c('ul',[_c('li',[_v("1a.1. System displays a message indicating that an invalid ID is being called.")]),_v(" "),_c('li',[_v("Use Case Ends.")])])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Use Case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Rename")]),_v(" a Loan Transaction")])])}
@@ -323,58 +308,73 @@ with(this){return _c('p',[_c('strong',[_v("Use Case: "),_c('code',{pre:true,attr
 with(this){return _c('p',[_c('em',[_v("MSS")]),_v("*")])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests a persons ID to rename a loan to a given name")])]),_v(" "),_c('li',[_c('p',[_v("System creates an updated loan")])]),_v(" "),_c('li',[_c('p',[_v("System display rename success message.")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests a loans ID to rename a loan borrower")])]),_v(" "),_c('li',[_c('p',[_v("System creates an updated loan")])]),_v(" "),_c('li',[_c('p',[_v("System display rename success message.")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("1a. No person with the given ID exists.\n"),_c('ul',[_c('li',[_v("1a.1. System displays a message indicating that an invalid ID is being called.")]),_v(" "),_c('li',[_v("Use case ends.")])])]),_v(" "),_c('li',[_v("1b. Invalid name field is received as an input\n"),_c('ul',[_c('li',[_v("1b.1. System displays a message indicating that an invalid ID is being called.")]),_v(" "),_c('li',[_v("Use case ends.")])])])])}
+with(this){return _c('ul',[_c('li',[_v("1a. No loan with the given ID exists.\n"),_c('ul',[_c('li',[_v("1a.1. System displays a message indicating that an invalid ID is being called.")]),_v(" "),_c('li',[_v("Use case ends.")])])]),_v(" "),_c('li',[_v("1b. Invalid name field is received as an input\n"),_c('ul',[_c('li',[_v("1b.1. System displays a message indicating that an invalid ID is being called.")]),_v(" "),_c('li',[_v("Use case ends.")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Use Case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Retag")]),_v(" a Loan Transaction")])])}
+with(this){return _c('p',[_c('strong',[_v("Use Case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Tag")]),_v(" a Loan Transaction")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('em',[_v("MSS")]),_v("*")])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests a persons ID to retag a loan to a given set of tags")])]),_v(" "),_c('li',[_c('p',[_v("System creates an updated loan")])]),_v(" "),_c('li',[_c('p',[_v("System display retag success message.")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests a loan ID to tag a loan")])]),_v(" "),_c('li',[_c('p',[_v("System creates an updated loan")])]),_v(" "),_c('li',[_c('p',[_v("System display tag success message.")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("1a. No person with the given ID exists.\n"),_c('ul',[_c('li',[_v("1a.1. System displays a message indicating that an invalid ID is being called.")]),_v(" "),_c('li',[_v("Use case ends.")])])])])}
+with(this){return _c('ul',[_c('li',[_v("1a. No loan with the given ID exists.\n"),_c('ul',[_c('li',[_v("1a.1. System displays a message indicating that an invalid ID is being called.")]),_v(" "),_c('li',[_v("Use case ends.")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Use Case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Sort")]),_v(" People by Amount Loaned")])])}
+with(this){return _c('p',[_c('strong',[_v("Use Case: Add and Edit a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Phone")]),_v(" Value")])])}
+},function anonymous(
+) {
+with(this){return _c('p',[_c('em',[_v("MSS")]),_v("*")])}
+},function anonymous(
+) {
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests a loan ID to add or edit a borrowers' phone number")])]),_v(" "),_c('li',[_c('p',[_v("System creates an updated loan")])]),_v(" "),_c('li',[_c('p',[_v("System display phone success message.")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
+},function anonymous(
+) {
+with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
+},function anonymous(
+) {
+with(this){return _c('ul',[_c('li',[_v("1a. No loan with the given ID exists.\n"),_c('ul',[_c('li',[_v("1a.1. System displays a message indicating that an invalid ID is being called.")]),_v(" "),_c('li',[_v("Use case ends.")])])])])}
+},function anonymous(
+) {
+with(this){return _c('p',[_c('strong',[_v("Use Case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Sort")]),_v(" Loan by Amount Loaned")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to sort people")])]),_v(" "),_c('li',[_c('p',[_v("System sort people by amount owed and displays it to the user.")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to sort loans")])]),_v(" "),_c('li',[_c('p',[_v("System sort loans by amount owed and displays it to the user.")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("1a. No outstanding loans.")]),_v(" "),_c('ul',[_c('li',[_v("1a.1. No people are displayed.")]),_v(" "),_c('li',[_v("Use Case Ends.")])]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("1a. No outstanding loans.")]),_v(" "),_c('ul',[_c('li',[_v("1a.1. No loans are displayed.")]),_v(" "),_c('li',[_v("Use Case Ends.")])]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Use Case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Sort")]),_v(" People by Name TBD")])])}
+with(this){return _c('p',[_c('strong',[_v("Use Case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Sort")]),_v(" Loans by Borrowers' Name TBD")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to sort people by name")])]),_v(" "),_c('li',[_c('p',[_v("System sort people by amount owed and displays it to the user.")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to sort loans by borrowers' name")])]),_v(" "),_c('li',[_c('p',[_v("System sort loans and displays it to the user.")]),_v(" "),_c('p',[_v("Use Case Ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("1a. No outstanding loans.\n"),_c('ul',[_c('li',[_c('p',[_v("1a.1. No people are displayed.")])]),_v(" "),_c('li',[_c('p',[_v("Use Case Ends.")])])])])])}
+with(this){return _c('ul',[_c('li',[_v("1a. No outstanding loans.\n"),_c('ul',[_c('li',[_c('p',[_v("1a.1. No loans are displayed.")])]),_v(" "),_c('li',[_c('p',[_v("Use Case Ends.")])])])])])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"non-functional-requirements"}},[_v("Non-Functional Requirements"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#non-functional-requirements","onclick":"event.stopPropagation()"}})])}
@@ -389,7 +389,7 @@ with(this){return _c('p',[_c('em',[_v("{More to be added}")])])}
 with(this){return _c('h3',{attrs:{"id":"glossary"}},[_v("Glossary"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#glossary","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('strong',[_v("Mainstream OS")]),_v(": Windows, Linux, Unix, MacOS")]),_v(" "),_c('li',[_c('strong',[_v("Loan Issuer")]),_v(": The loan who lends money or items to others and expects repayment or return.")]),_v(" "),_c('li',[_c('strong',[_v("User")]),_v(": A general term for anyone using the system, including loan issuers and those managing their loans.")]),_v(" "),_c('li',[_c('strong',[_v("Forgetful User")]),_v(": A user who needs additional reminders and tracking features to recall outstanding loans.")]),_v(" "),_c('li',[_c('strong',[_v("Frequent Loaner")]),_v(": A user who frequently lends money or items and needs an organized record of past and present loans.")]),_v(" "),_c('li',[_c('strong',[_v("Cash-Strapped User")]),_v(": A user who urgently needs to recover loaned money to maintain financial stability.")]),_v(" "),_c('li',[_c('strong',[_v("New User")]),_v(": Someone who has just started using the system and may require guidance on how to navigate it.")]),_v(" "),_c('li',[_c('strong',[_v("Loan Amount")]),_v(": The total sum of money lent to a borrower.")]),_v(" "),_c('li',[_c('strong',[_v("Loan Duration")]),_v(": The time period between when a loan is given and when it is expected to be returned.")]),_v(" "),_c('li',[_c('strong',[_v("Loan Type")]),_v(": The category of a loan, such as money or physical items.")]),_v(" "),_c('li',[_c('strong',[_v("Blacklist")]),_v(": A feature allowing users to mark individuals who frequently delay or fail to return loans, so they can avoid lending to them in the future.")]),_v(" "),_c('li',[_c('strong',[_v("Loan Limits")]),_v(": A restriction set by the user to prevent lending beyond a specified amount to manage risk.")]),_v(" "),_c('li',[_c('strong',[_v("Tagging")]),_v(": A method of categorizing individuals based on different attributes such as loan amount, duration, or spending habits.")]),_v(" "),_c('li',[_c('strong',[_v("Leaderboard")]),_v(": A visual ranking system displaying individuals with the highest or longest overdue loans.")]),_v(" "),_c('li',[_c('strong',[_v("Loan History")]),_v(": A record of all past fulfilled loans, categorized by time or type.")]),_v(" "),_c('li',[_c('strong',[_v("Interest Calculation")]),_v(": A feature to determine how much extra money should be repaid based on a percentage applied to the loan over time.")]),_v(" "),_c('li',[_c('strong',[_v("Grace Period")]),_v(": A specified duration after which a loan becomes overdue and reminders may be sent.")]),_v(" "),_c('li',[_c('strong',[_v("Projected Returns")]),_v(": An estimate of the total amount the user would recover if all outstanding loans were repaid.")]),_v(" "),_c('li',[_c('strong',[_v("Autogenerated Message")]),_v(": A pre-written notification that can be sent to remind borrowers about their pending repayments.")]),_v(" "),_c('li',[_c('strong',[_v("Purge Records")]),_v(": The ability to delete all stored loan data, often used to clear test or example entries.")]),_v(" "),_c('li',[_c('strong',[_v("Loaned Item Description")]),_v(": A detailed note about an item that has been lent out to help identify it later.")]),_v(" "),_c('li',[_c('strong',[_v("Sorting")]),_v(": Organizing loan records based on factors such as amount, duration, priority, or borrower.")]),_v(" "),_c('li',[_c('strong',[_v("Upload Photos")]),_v(": The ability to attach images of borrowers or loaned items for visual reference.")]),_v(" "),_c('li',[_c('strong',[_v("Notifications")]),_v(": Alerts sent to remind users of overdue loans or outstanding repayments.")]),_v(" "),_c('li',[_c('strong',[_v("Example Entries")]),_v(": Pre-filled sample data to help new users understand how the system works.")]),_v(" "),_c('li',[_c('strong',[_v("Fulfilled Loan")]),_v(": A loan that has been completely repaid or returned.")])])}
+with(this){return _c('ul',[_c('li',[_c('strong',[_v("Mainstream OS")]),_v(": Windows, Linux, Unix, MacOS")]),_v(" "),_c('li',[_c('strong',[_v("Loan Issuer")]),_v(": The loan who lends money or items to others and expects repayment or return.")]),_v(" "),_c('li',[_c('strong',[_v("User")]),_v(": A general term for loan issuers managing their loans.")]),_v(" "),_c('li',[_c('strong',[_v("Forgetful User")]),_v(": A user who needs additional reminders and tracking features to recall outstanding loans.")]),_v(" "),_c('li',[_c('strong',[_v("Frequent Loaner")]),_v(": A user who frequently lends money or items and needs an organized record of past and present loans.")]),_v(" "),_c('li',[_c('strong',[_v("Cash-Strapped User")]),_v(": A user who urgently needs to recover loaned money to maintain financial stability.")]),_v(" "),_c('li',[_c('strong',[_v("New User")]),_v(": Someone who has just started using the system and may require guidance on how to navigate it.")]),_v(" "),_c('li',[_c('strong',[_v("Amount")]),_v(": A sum of money.")]),_v(" "),_c('li',[_c('strong',[_v("Loan Transaction")]),_v(": An action to increase or decrease the loan owed to the user.")]),_v(" "),_c('li',[_c('strong',[_v("Tags")]),_v(": A method of categorizing individuals based on different attributes such as spending habits, friends, family etc.")]),_v(" "),_c('li',[_c('strong',[_v("Leaderboard")]),_v(": A visual ranking system displaying individuals with the highest loans.")]),_v(" "),_c('li',[_c('strong',[_v("Loan History")]),_v(": A record of all loan transactions under a current loan, categorized by increase or repay transactions.")]),_v(" "),_c('li',[_c('strong',[_v("Clear")]),_v(": The ability to delete all stored loan data, often used to clear test or example entries.")]),_v(" "),_c('li',[_c('strong',[_v("Sorting")]),_v(": Organizing loan records based on factors such as amount, duration, priority, or borrower.")]),_v(" "),_c('li',[_c('strong',[_v("Example Entries")]),_v(": Pre-filled sample data to help new users understand how the system works.")]),_v(" "),_c('li',[_c('strong',[_v("Not Wanted")]),_v(": A status tag that indicates a loan  has been completely repaid.")]),_v(" "),_c('li',[_c('strong',[_v("Wanted")]),_v(": A status tag that indicates a loan has not been repaid.")])])}
 },function anonymous(
 ) {
 with(this){return _c('h2',{attrs:{"id":"appendix-instructions-for-manual-testing"}},[_c('strong',[_v("Appendix: Instructions for manual testing")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#appendix-instructions-for-manual-testing","onclick":"event.stopPropagation()"}})])}
@@ -413,6 +413,6 @@ with(this){return _c('h3',{attrs:{"id":"saving-data"}},[_v("Saving data"),_c('a'
 with(this){return _c('ol',[_c('li',[_c('p',[_v("Dealing with missing/corrupted data files")]),_v(" "),_c('ol',[_c('li',[_c('em',[_v("{explain how to simulate a missing/corrupted file, and the expected behavior}")])])])]),_v(" "),_c('li',[_c('p',[_c('em',[_v("{ more test cases …​ }")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Thu, 3 Apr 2025, 10:12:41 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Thu, 3 Apr 2025, 21:40:46 GMT+8]")])])])}
 }];
   
