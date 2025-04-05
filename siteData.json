@@ -40,9 +40,9 @@
       "src": "DeveloperGuide.md",
       "title": "Developer Guide",
       "headings": {
-        "ab-3-developer-guide": "AB-3 Developer Guide",
+        "wanted-developer-guide": "Wanted Developer Guide",
         "acknowledgements": "Acknowledgements",
-        "setting-up-getting-started": "Setting up, getting started",
+        "setting-up-getting-started": "Setting Up, Getting Started",
         "design": "Design",
         "architecture": "Architecture",
         "ui-component": "UI component",
@@ -62,8 +62,15 @@
         "glossary": "Glossary",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
+        "adding-a-loan": "Adding a loan",
+        "repaying-a-loan": "Repaying a loan",
+        "editing-loan-transaction-history": "Editing loan transaction history",
+        "deleting-loan-transaction-history": "Deleting loan transaction history",
+        "finding-specific-entries": "Finding specific entries",
+        "displaying-all-entries": "Displaying all entries",
+        "sorting-the-list": "Sorting the list",
         "deleting-a-loan": "Deleting a loan",
-        "saving-data": "Saving data"
+        "appendix-planned-enhancements": "Appendix: Planned Enhancements"
       },
       "headingKeywords": {}
     },
@@ -109,8 +116,9 @@
       "headings": {
         "wanted-user-guide": "Wanted User Guide",
         "value-proposition": "Value Proposition",
+        "quick-start": "Quick Start",
         "tl-dr": "TL;DR",
-        "command-summary": "Command summary",
+        "command-summary": "Command Summary",
         "features": "Features",
         "viewing-help-help": "Viewing help: help",
         "adding-an-entry-add": "Adding an entry: add",
@@ -118,8 +126,8 @@
         "adding-updating-phone-number-phone": "Adding/Updating phone number: phone",
         "adding-updating-tags-tag": "Adding/Updating tags: tag",
         "adding-a-loan-increase": "Adding a loan: increase",
-        "repay-a-loan-repay": "Repay a loan: repay",
-        "editing-a-transaction-edit": "Editing a transaction: edit",
+        "repaying-a-loan-repay": "Repaying a loan: repay",
+        "editing-a-transaction-edithist": "Editing a transaction: edithist",
         "deleting-a-transaction-delhist": "Deleting a transaction: delhist",
         "listing-all-entries-list": "Listing all entries: list",
         "locating-entries-by-name-find": "Locating entries by name: find",
@@ -130,8 +138,7 @@
         "saving-the-data": "Saving the data",
         "backing-up-data-files": "Backing up data files",
         "transferring-data-across-devices": "Transferring data across devices",
-        "known-issues": "Known issues",
-        "quick-start": "Quick start"
+        "known-issues": "Known Issues"
       },
       "headingKeywords": {}
     },
