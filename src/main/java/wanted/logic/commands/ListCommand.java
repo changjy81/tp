@@ -18,7 +18,7 @@ public class ListCommand extends Command {
 
     public static final String COMMAND_WORD = "list";
 
-    public static final String MESSAGE_SUCCESS = "Listed the persons in alphabetic order of name";
+    public static final String MESSAGE_SUCCESS = "Listed the persons in alphabetical order of name";
 
 
     @Override

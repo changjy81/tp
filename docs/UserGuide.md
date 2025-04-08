@@ -102,11 +102,11 @@ ___How do I track a loan?___<br>
 Use the <a href="#add">add</a> command to add the loanee’s name to the list, then use the <a href="#increase">increase</a> command to assign the amount loaned to that person’s entry.
 
 ___How do I track repayments?___<br>
-Use the <a href="#repay">repay</a> command when the loanee’s entry is visible on the list.
+Locate the loanee's entry in the list and use the <a href="#repay">repay</a> command.
 
 ___How do I find an entry that I want to modify?___<br>
 If you remember the loanee’s name, use the <a href="#find">find</a> command to find the loan.
-To organize your Wanted list, you can use <a href="#list">list</a> to arrange by name, or <a href="#sort">sort</a> to arrange by the total amount owed.
+To organize your Wanted list, you can use <a href="#list">list</a> to arrange by name, or <a href="#sort">sort</a> to arrange by the remaining amount owed.
 
 --------------------------------------------------------------------------------------------------------------------
 ## User Interface
@@ -134,8 +134,8 @@ An entry contains the following components:
 
 * **Name**: Displays the name of the person. The number to the left indicates the index of the entry.
 
-* **Wanted badge**: Indicates whether the person has fully repaid their loan.  
-  It shows `Wanted` if any amount is still unpaid, and `Not Wanted` otherwise.
+* **Wanted badge**: Indicates whether the person still owes you any money.  
+  It shows `Wanted` if they owe you money, and `Not Wanted` otherwise.
 
 * **Tags**: Displays a list of tags associated with the person.
 
@@ -153,6 +153,7 @@ An entry contains the following components:
       Example: `$50.00 repaid on 2025-02-01`
 
   The number to the left of each transaction indicates its index within the transaction history.  
+
   If the transaction list exceeds the height of the display area, the most recent transactions (those with higher indices) are shown by default.  
   You can scroll upward using the scrollbar on the right to view older transactions.
 
@@ -221,7 +222,7 @@ The parameters you provide must meet the following constraints, unless otherwise
 
 Additionally, excessively long inputs or unusually large values may cause the app to behave unexpectedly.
 
-If you encounter an error message indicating that your input is invalid and you're unsure how to correct it, please refer to the table below along with the detailed explanations of each command further down.
+If you encounter an error message indicating that your input is invalid and you're unsure how to correct it, refer to the table below along with the detailed explanations of each command further down.
 
 Parameter  | Constraints                                                                                                    | Examples of **valid** input | Examples of **invalid** input
 -----------|----------------------------------------------------------------------------------------------------------------|----------------------|-----
@@ -237,23 +238,23 @@ Parameter  | Constraints                                                        
 
 <h3 id="help">Viewing help: <code>help</code></h3>
 
-Shows a message explaining how to access the help page.
+This command displays a link to this User Guide for your reference.
 
 ![help message](images/helpMessage.png)
 
-Format: `help`
+**Format:** `help`
 
 <h3 id="add">Adding an entry: <code>add</code></h3>
 
-Adds a new person as a new entry to the Wanted list.<br>
+This command allows you to add a new person as a new entry to the Wanted list.<br>
 
-Format: `add n/[NAME]`
+**Format:** `add n/[NAME]`
 
 (See [Notes about the command formats](#note-command-format) and [Restrictions on the parameters](#restrictions))
 
 **Explanations:**
-* This command adds a new entry starts with no money loaned and no money to be returned, no transaction history and no tags.
-* This command does not accept names that already exist in the Wanted List.
+* This command adds a new entry with the specified `NAME`, starting with no loaned or repaid amount, no transaction history, no phone number, and no tags.
+* `NAME` must not already exist in the Wanted list.
 
 <box>
 
@@ -269,14 +270,14 @@ New loan created for: Cory Ander; Remaining Loan Amount: 0.00; Total Loaned Amou
 You will see a new entry with the name Cory Ander, however take note the money loaned and the money to be returned will be initialised to zero.
 The transaction history and tags will also be empty.
 
-**Scenario 2:** Attempting to add an entry with the same name as another entry<br>
+**Scenario 2:** Attempting to add an entry with an existing name in the Wanted list<br>
 > **Note:** Assume Cory Ander exists at the first index.
 
 **Input:** `add n/Cory Ander`<br>
 
 **Output:**
 ```output 
-This person has already loaned out money in the Wanted list.
+This person has already loaned out money in the wanted list
 ```
 **Behaviour:**
 You will receive an error message.
@@ -287,16 +288,15 @@ You will receive an error message.
 
 <h3 id="rename">Renaming an entry: <code>rename</code></h3>
 
-Changes the name of the specified entry in the Wanted list.
+This commands allows you to change the name of the specified entry in the Wanted list.
 
-Format: `rename [ID] n/[NAME]`
+**Format:** `rename [ID] n/[NAME]`
 
 (See [Notes about the command formats](#note-command-format) and [Restrictions on the parameters](#restrictions))<br>
 
 **Explanations:**
-* This command allows you to modify the entry at the specified `ID`. The ID refers to the index number shown in the displayed person list.
-* To update the entry's name, `NAME` must be alpha-numeric and non-empty
-* If a name `n/[NAME]` is equal to the previous name or any other name in the Wanted list, the name will not be updated.
+* This command allows you to modify the entry at the specified `ID`. The ID refers to the index number shown in the displayed Wanted list.
+* If `NAME` is equal to the previous name or any other name in the Wanted list, the name will not be updated.
 
 **Examples:**
 
@@ -313,7 +313,7 @@ Edited loan name: Cory Ander; Remaining Loan Amount: 1199.50; Total Loaned Amoun
 **Behaviour:**
 The first entry will be renamed to Cory Ander.
 
-**Scenario 2:** Renaming an entry with the same name<br>
+**Scenario 2:** Attempting to rename an entry with the same name<br>
 > **Note:** Assume Cory Ander exists at the first index.
 
 **Input:** `rename 1 n/Cory Ander`<br>
@@ -325,13 +325,14 @@ New name must be different from the old one.
 **Behaviour:**
 You will receive an error message.
 
-**Scenario 3:** Renaming an entry with an existing name in the Wanted List<br>
+**Scenario 3:** Attempting to rename an entry with an existing name in the Wanted list<br>
+> **Note:** Assume David Li exists at the second index.
 
 **Input:** `rename 1 n/David Li`<br>
 
 **Output:**
 ```output 
-This person already exists in the Wanted list.
+This person already exists in the wanted list.
 ```
 **Behaviour:**
 You will receive an error message.
@@ -341,21 +342,21 @@ You will receive an error message.
 
 <h3 id="phone">Adding/Updating phone number: <code>phone</code></h3>
 
-This command allows you to add and delete an entry's phone number in the Wanted list.
+This command allows you to add, change or delete a phone number for an entry in the Wanted list.
 
 <box type="warning" seamless>
 
-**Warning**: An empty phone p/ will clear the entry's phone number.
+**Warning**: An empty phone number `p/` will clear the entry's phone number.
 </box>
 
-Format: `phone [ID] p/[PHONE]`
+**Format:** `phone [ID] p/[PHONE]`
 
 (See [Notes about the command formats](#note-command-format) and [Restrictions on the parameters](#restrictions))
 
 **Explanations:**
-* This command allows you to modify the entry at the specified `ID`. The ID refers to the index number shown in the displayed person list.
-* To add or update a phone number, `PHONE` must be a new number and non-empty.
-* If a phone number `p/[PHONE]` is equal to the previous phone number, the entry will not be updated.
+* This command allows you to modify the entry at the specified `ID`. The ID refers to the index number shown in the displayed Wanted list.
+* To add or change a phone number, `PHONE` must be non-empty and different from the current phone number (if exists).
+* To delete a phone number, supply an empty `PHONE` (i.e. `phone [ID] p/`).
 
 **Examples:**
 
@@ -381,10 +382,10 @@ The phone number of your first entry will be updated to `98765432`.
 This loan now has no phone number: Cory Ander; Remaining Loan Amount: 1199.50; Total Loaned Amount: 1200.00; Phone Number: --------; Tags: [owesALot][friends]
 ```
 **Behaviour:**
-The phone number of your first entry will be deleted and instead display `No phone number available`.
+The phone number of your first entry will be deleted and instead displayed as `No phone number available`.
 
 **Scenario 3:** Attempting to add multiple phone numbers<br>
-> **Note:** This command will only execute when there is one prefix `p/[PHONE]`
+> **Note:** This command will only be executed when there is one prefix `p/` in your input.
 
 **Input:** `phone 1 p/98765432 p/`<br>
 
@@ -395,13 +396,14 @@ Multiple values specified for the following single-valued field(s): p/
 **Behaviour:**
 You will receive an error message.
 
-**Scenario 4:** Attempting to update an identical phone numbers<br>
+**Scenario 4:** Attempting to update with the same phone number<br>
+> **Note:** Assume the phone number of the second entry is initially `20242025`.
 
 **Input:** `phone 2 p/20242025`<br>
 
 **Output:**
 ```output 
-New phone number must be different than the old one
+New phone number must be different from the old one.
 ```
 **Behaviour:**
 You will receive an error message.
@@ -410,29 +412,29 @@ You will receive an error message.
 
 <h3 id="tag">Adding/Updating tags: <code>tag</code></h3>
 
-This command allows you to add or delete tag descriptors to each entry.
+This command allows you to add or delete tag descriptors for an entry.
 
 <box type="tip" seamless>
 
-**Tip**: A person can have any number of tags (including 0)<br>
+**Tip**: An entry can have any number of tags (including 0).<br>
 </box>
 <box type="warning" seamless>
 
-**Warning**: An empty tag t/ will clear all tags
+**Warning**: An empty tag `t/` will clear all tags of the entry.
 </box>
 
-Format: `tag [ID] t/[TAG]…`
+**Format:** `tag [ID] t/[TAG]…`
 
 (See [Notes about the command formats](#note-command-format) and [Restrictions on the parameters](#restrictions))
 
 **Explanations:**
-* This command allows you to modify the entry at the specified `ID`. The ID refers to the index number shown in the displayed person list.
-* To add a Tag, `TAG` must be non-empty, unique to the tag list, and case-insensitive.
+* This command allows you to modify the entry at the specified `ID`. The ID refers to the index number shown in the displayed Wanted list.
+* To add a tag, `TAG` must be non-empty, unique to the tag list, and case-insensitive.
 <br>When adding multiple tags in a single command:
     - The system checks if all tags in your command already exist in the tag list (case-insensitive).
     - If all tags are already present, no edit will occur.
     - If at least one tag is new, then only the unique tags will be added to the list.
-* If a `TAG` is empty e.g. `t/` all tags will be deleted.
+* To delete all tags, supply an empty `TAG` (i.e. `tag [ID] t/`).
 
 **Examples:**
 
@@ -441,18 +443,19 @@ Format: `tag [ID] t/[TAG]…`
 **Scenario 1:** Adding a new tag<br>
 
 **Input:** `tag 1 t/schoolmate`<br>
+>**Note:** Assume there initially exists no tags in the first entry.
 
 **Output:**
 ```output
 Edited loan name: Anna Sue; Remaining Loan Amount: 80.00; Total Loaned Amount: 100.00; Phone Number: --------; Tags: [schoolmate]
 ```
 **Behaviour:**
-The tags of the first entry will be updated and show `schoolmate`.
+The tags of the first entry will be updated to `schoolmate`.
 
 **Scenario 2:** Adding a duplicate tag<br>
 
-> **Note:** Assuming the tag schoolmate already exists. If a tag which does not exist in the current tag list such as `t/home`
-> is added the command will return successfully
+> **Note:** Assume the tag `schoolmate` already exists in the first entry. If a tag which does not exist in the current tag list such as `t/home`
+> is added, the command will return successfully.
 
 **Input:** `tag 1 t/schoolmate` <br>
 
@@ -463,9 +466,9 @@ Your requested tag(s) already exist(s) for this person
 **Behaviour:**
 You will receive an error message.
 
-**Scenario 3:** Add a tag<br>
+**Scenario 3:** Adding a tag<br>
 
-> **Note:** Assuming the tag schoolmate already exists.
+> **Note:** Assume the tag `schoolmate` already exists in the first entry.
 
 **Input:** `tag 1 t/CS2103` <br>
 
@@ -474,11 +477,11 @@ You will receive an error message.
 Edited loan tags: Anna Sue; Remaining Loan Amount: 80.00; Total Loaned Amount: 100.00; Phone Number: --------; Tags: [schoolmate][CS2103]
 ```
 **Behaviour:**
-You will see an updated tags list which includes CS2103.
+You will see an updated tags list which includes `CS2103`.
 
-**Scenario 4:** Add multiple tags<br>
+**Scenario 4:** Adding multiple tags<br>
 
-> **Note:** Assuming the tags schoolmate and CS2103 already exists. Please scroll to see the entire output.
+> **Note:** Assume the tags `schoolmate` and `CS2103` already exist. Scroll to see the entire output.
 
 **Input:** `tag 1 t/owesALot t/shopaholic` <br>
 
@@ -487,9 +490,9 @@ You will see an updated tags list which includes CS2103.
 Edited loan tags: Anna Sue; Remaining Loan Amount: 80.00; Total Loaned Amount: 100.00; Phone Number: --------; Tags: [schoolmate][CS2103][owesALot][shopaholic]
 ```
 **Behaviour:**
-You will see an updated tags list which includes owesALot and shopaholic.
+You will see an updated tags list which includes `owesALot` and `shopaholic`.
 
-**Scenario 5:** Delete all tags
+**Scenario 5:** Deleting all tags
 
 **Input:** `tag 1 t/`<br>
 
@@ -500,8 +503,8 @@ Edited loan name: Anna Sue; Remaining Loan Amount: 80.00; Total Loaned Amount: 1
 **Behaviour:**
 All tags for the first entry will be deleted.
 
-**Scenario 6:** Add and delete tags in one command failure
-> **Note:** To delete a tag please input only t/ as per scenario 5
+**Scenario 6:** Attempting to add and delete tags in one command
+> **Note:** To delete a tag, input only `t/` as per scenario 5.
 
 **Input:** `tag 1 t/ t/newtag` or `tag 1 t/newtag t/` <br>
 
@@ -516,15 +519,16 @@ You will receive an error message.
 
 <h3 id="increase">Adding a loan: <code>increase</code></h3>
 
-This command lets you record an increase in the loan amount for a specific entry, and saves it as a transaction in the entry's transaction history.
+This command allows you to increase the loan of an entry by specifying the loaned amount and date.
 
-Format: `increase [ID] l/[AMOUNT] d/[DATE]`
+**Format:** `increase [ID] l/[AMOUNT] d/[DATE]`
 
 (See [Notes about the command formats](#note-command-format) and [Restrictions on the parameters](#restrictions))
 
 **Explanations:**
-* You can add an increase transaction to the entry at the specified ID. The ID refers to the index number shown in the displayed person list.
-* The increase command records a new transaction, and can be observed in your entry's transaction history.
+* This command allows you to increase the loan of the entry at the specified `ID`. The ID refers to the index number shown in the displayed Wanted list.
+* The entry's remaining loan amount and total loaned amount are increased by `AMOUNT`.
+* A new transaction is appended to the end of the entry's transaction history, indicating that the specified `AMOUNT` was loaned on the given `DATE`.
 
 <box type="warning" seamless>
 
@@ -536,26 +540,27 @@ This issue will be addressed in future releases.
 
 <box>
 
-**Scenario:** Adding a new increase transaction<br>
+**Scenario:** Increasing a loan<br>
+> **Note:** In all the scenarios below, assume that the remaining loan amount and the total loaned amount of the first entry are initially $100.00.
 
-**Input:** `increase 1 l/10.10 d/2024-12-12`<br>
+**Input:** `increase 1 l/50.00 d/2024-12-12`<br>
 
 **Output:**
 ```output 
-Loan successfully updated: Alex Yeoh; Remaining Loan Amount: 1209.60; Total Loaned Amount: 1210.10; Phone Number: --------; Tags: [owesALot][friends]
+Loan successfully updated: Alex Yeoh; Remaining Loan Amount: 150.00; Total Loaned Amount: 150.00; Phone Number: --------; Tags: [owesALot][friends]
 ```
 **Behaviour:**
-The total loan amount increases by `$10.10`. A new transaction, `$10.10 loaned on 2024-12-12` will be appended to the end
+Both the remaining loan amount and the total loaned amount will be increased by `$50.00`. A new transaction, `$50.00 loaned on 2024-12-12`, will be appended to the end
 of the transaction history of the first entry.
 </box>
 
-![command example](images/increaseCommand.png)
+[//]: # (![command example]&#40;images/increaseCommand.png&#41;)
 
 <h3 id="repay">Repaying a loan: <code>repay</code></h3>
 
 This command allows you to repay a loan of an entry by specifying the repayment amount and date.
 
-Format: `repay [ID] l/[AMOUNT] d/[DATE]`
+**Format:** `repay [ID] l/[AMOUNT] d/[DATE]`
 
 (See [Notes about the command formats](#note-command-format) and [Restrictions on the parameters](#restrictions))
 
@@ -574,7 +579,7 @@ This issue will be addressed in future releases.
 **Examples:**
 <box>
 
-> **Note:** In all the scenarios below, assume that the remaining loan amount and the total loaned amount of the first entry are initially $100.00.
+> **Note:** In all the scenarios below, assume the remaining loan amount and the total loaned amount of the first entry are initially $100.00.
 
 **Scenario 1:** Partially repaying a loan<br>
 
@@ -586,8 +591,8 @@ Loan successfully repaid: John Doe; Remaining Loan Amount: 50.00; Total Loaned A
 ```
 
 **Behaviour:**
-The remaining loan amount of the first entry is reduced by $50.00 (the total loaned amount remains unchanged).
-A new transaction, `$50.00 repaid on 2025-01-01`, is appended to the end of the transaction history of the first entry.
+The remaining loan amount of the first entry will be reduced by $50.00 (the total loaned amount will remain unchanged).
+A new transaction, `$50.00 repaid on 2025-01-01`, will be appended to the end of the transaction history of the first entry.
 
 **Scenario 2:** Fully repaying a loan<br>
 
@@ -599,8 +604,8 @@ Loan successfully repaid entirely: John Doe; Remaining Loan Amount: 0.00; Total 
 ```
 
 **Behaviour:**
-The remaining loan amount of the first entry is reduced by $100.00. (The total loaned amount remains unchanged.)
-A new transaction, `$100.00 repaid on 2025-01-01`, is appended to the end of the transaction history of the first entry.
+The remaining loan amount of the first entry will be reduced by $100.00. (The total loaned amount will remain unchanged.)
+A new transaction, `$100.00 repaid on 2025-01-01`, will be appended to the end of the transaction history of the first entry.
 
 **Scenario 3:** Overpayment (invalid input)<br>
 
@@ -619,7 +624,7 @@ You will receive an error message.
 
 This command allows you to edit an existing transaction in the transaction history of an entry.
 
-Format: `edithist [ID] i/[TRANSACTION ID] (l/[AMOUNT]) (d/[DATE])`
+**Format:** `edithist [ID] i/[TRANSACTION ID] (l/[AMOUNT]) (d/[DATE])`
 
 (See [Notes about the command formats](#note-command-format) and [Restrictions on the parameters](#restrictions))
 
@@ -659,8 +664,8 @@ Loan successfully updated: John Doe; Remaining Loan Amount: 100.00; Total Loaned
 ```
 
 **Behaviour:**
-The second transaction of the first entry is changed to `$100.00 repaid on 2025-02-01`.
-As a result, the remaining loan amount is updated to $100.00.
+The second transaction of the first entry will be changed to `$100.00 repaid on 2025-02-01`.
+As a result, the remaining loan amount will be updated to $100.00.
 
 **Scenario 2:** Editing date<br>
 
@@ -672,7 +677,7 @@ Loan successfully updated: John Doe; Remaining Loan Amount: 150.00; Total Loaned
 ```
 
 **Behaviour:**
-The second transaction of the first entry is changed to `$50.00 repaid on 2025-02-02`.
+The second transaction of the first entry will be changed to `$50.00 repaid on 2025-02-02`.
 
 **Scenario 3:** Editing both amount and date<br>
 
@@ -684,8 +689,8 @@ Loan successfully updated: John Doe; Remaining Loan Amount: 250.00; Total Loaned
 ```
 
 **Behaviour:**
-The third transaction of the first entry is changed to `$200.00 loaned on 2025-02-02`.
-As a result, the remaining loan amount and the total loaned amount are updated to $250.00 and $300.00, respectively.
+The third transaction of the first entry will be changed to `$200.00 loaned on 2025-02-02`.
+As a result, the remaining loan amount and the total loaned amount will be updated to $250.00 and $300.00, respectively.
 
 **Scenario 4:** Edit resulting in a negative remaining loan amount (invalid input)<br>
 
@@ -697,7 +702,7 @@ Invalid transaction update: This update would result in a negative remaining loa
 ```
 
 **Behaviour:**
-No operation is performed, since the total loan amount would be negative.
+You will receive an error message.
 If the amount of the first transaction were changed to $30.00, the remaining loan amount
 after the second transaction would be $30.00 - $50.00 = $-20.00, which is not allowed.
   </box>
@@ -706,7 +711,7 @@ after the second transaction would be $30.00 - $50.00 = $-20.00, which is not al
 
 This command allows you to delete an existing transaction in the transaction history of an entry.
 
-Format: `delhist [ID] i/[TRANSACTION ID]`
+**Format:** `delhist [ID] i/[TRANSACTION ID]`
 
 (See [Notes about the command formats](#note-command-format) and [Restrictions on the parameters](#restrictions))
 
@@ -743,7 +748,7 @@ Loan successfully updated: John Doe; Remaining Loan Amount: 200.00; Total Loaned
 ```
 
 **Behaviour:**
-The second transaction of the first entry is deleted. As a result, the remaining loan amount is updated to $200.00.
+The second transaction of the first entry will be deleted. As a result, the remaining loan amount will be updated to $200.00.
 
 **Scenario 2:** Deletion resulting in a negative remaining loan amount (invalid input)<br>
 
@@ -755,30 +760,28 @@ Invalid transaction update: This update would result in a negative remaining loa
 ```
 
 **Behaviour:**
-You will receive an error message. No operation is performed.
+You will receive an error message.
 If the first transaction were deleted, the remaining loan amount after the second transaction (which would become the new first) would be $-50.00, which is not allowed.
   </box>
 
 <h3 id="list">Listing all entries: <code>list</code></h3>
 
-This command allows you to list all entries in the Wanted list in alphabetical order.
+This command allows you to list all entries in the Wanted list in alphabetical order of name.
 
-Format: `list`
-
-(See [Notes about the command formats](#note-command-format) and [Restrictions on the parameters](#restrictions))
+**Format:** `list`
 
 <box type="warning" seamless>
 
-**Warning**: The list command changes the IDs of each entry. Be careful to use the correct IDs when editing or deleting entries.
+**Warning**: The `list` command changes the IDs of each entry. Be careful to use the correct IDs when editing or deleting entries.
 </box>
 
 **Explanations**:
-* List will return a Wanted list with all names in alphabetical order.
+* All entries in the Wanted list are displayed in alphabetical order of name.
 
 **Examples:**
 <box>
 
-> **Note:** In all the scenarios below, assume there are a list of entries with names as follows:
+> **Note:** In all the scenarios below, assume there are a list of names as follows:
 >
 >   (1.) John <br>
 >   (2.) John Mayer <br>
@@ -786,48 +789,101 @@ Format: `list`
 >   (4.) Bernice Chua <br>
 >   (5.) Alex Yeoh <br>
 
-**Scenario 1:** Listing all entries <br>
+**Scenario 1:** Listing all entries
 
 **Input:** `list`<br>
 
 **Output:**
 ```output
-Listed all persons (Sort alphabetically)
+Listed the persons in alphabetical order of name
 ```
-**Behaviour** 
+**Behaviour:** 
 An alphabetical sorting of all persons will take place.
-The Wanted list will be arranged as follows
+The Wanted list will be arranged as follows:
 >   (1.) Alex Yeoh <br>
 >   (2.) Bernice Chua <br>
 >   (3.) Joanna Lee <br>
 >   (4.) John <br>
 >   (5.) John Mayer <br>
+</box>
 
+<h3 id="sort">Sorting entries: <code>sort</code></h3>
+
+This commands allows you to sort the entries in descending order of remaining loan amount.
+
+**Format:** `sort`
+
+<box type="warning" seamless>
+
+**Warning**: The `sort` command changes the IDs of each entry. Be careful to use the correct IDs when editing or deleting entries.
+</box>
+
+**Explanations**:
+* The entries are sorted in descending order of remaining loan amount.
+* The person with the largest remaining loan amount will be displayed at the top of the Wanted list.
+
+**Examples:**
+<box>
+
+> **Note:** Assume there are a list of entries as follows:
+>   (1.) John
+>           Remaining Loan Amount: 21.05
+>           Total Loaned Amount: 23.05 <br>
+>   (2.) Alex Yeoh
+>           Remaining Loan Amount: 0.00
+>           Total Loaned Amount: 0.00 <br>
+>   (3.) Bernice Chua <br>
+>           Remaining Loan Amount: 21.05
+>           Total Loaned Amount: 21.05 <br>
+
+**Scenario 1:** Sorting <br>
+
+**Input:** `sort`<br>
+
+**Output:**
+```output
+Sorted the persons in descending order of remaining loan amount
+```
+
+**Behaviour:**
+- The entries will be sorted in descending order of remaining loan amount
+- The list of entries will be reordered as follows:
+>   (1.) John
+>           Remaining Loan Amount: 21.05
+>           Total Loaned Amount: 23.05 <br>
+>   (2.) Bernice Chua <br>
+>           Remaining Loan Amount: 21.05
+>           Total Loaned Amount: 21.05 <br>
+>   (3.) Alex Yeoh
+>           Remaining Loan Amount: 0.00
+>           Total Loaned Amount: 0.00 <br>
 </box>
 
 <h3 id="find">Locating entries by name: <code>find</code></h3>
 
-Finds entries whose names contain any of the given keywords.
+This command allows you to find entries whose names contain any of the given keywords.
 
-Format: `find [KEYWORD]...`
+**Format:** `find [KEYWORD]...`
 
 (See [Notes about the command formats](#note-command-format) and [Restrictions on the parameters](#restrictions))
 
 <box type="warning" seamless>
 
-**Warning**: The find command changes the IDs of each entry. Be careful to use the correct IDs when editing or deleting entries.
+**Warning**: The `find` command changes the IDs of each entry. Be careful to use the correct IDs when editing or deleting entries.
 </box>
 
 **Explanations**:
-* Find will sort the best match to the keywords entered at the top of the Wanted list.
+* This command sorts the best match to the keywords entered at the top of the Wanted list.
 * The search is case-insensitive. e.g `hans` will match `Hans`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
 * Only the name is searched and matched.
-* Partial matches will be returned e.g. `Han` will also match `Hans`
-* The best match to the keywords will be returned at the top of the Wanted list(i.e. `OR` search).
+* Partial matches will be returned. e.g. `Han` will also match `Hans`
+* The best match to the keywords will be returned at the top of the Wanted list (i.e. `OR` search).
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 * The output message will display the number of full matches. 
-  e.g. 
+
+**Examples:**
+<box>
 
 > **Note:** In all the scenarios below, assume there are a list of names as follows:
 >
@@ -862,7 +918,7 @@ Remaining entries will keep their relative positions.
 **Behaviour:**
 - Since there are no complete matches to any keywords entered, the output message will indicate that there are 0 full matches.
 - Names that partially contain 'jo' will be moved up on the Wanted List.
-- In this example, the output list is
+- In this example, the output list will be:
 >   (1.) Joanna Lee <br>
 >   (2.) John <br>
 >   (3.) John Mayer <br>
@@ -870,74 +926,24 @@ Remaining entries will keep their relative positions.
 >   (5.) Alex Yeoh <br>
 - Partial matches are displayed in alphabetical order.
   ![result for 'find jo'](images/findjo.png)
-
-<h3 id="sort">Sorting entries: <code>sort</code></h3>
-
-Sorts the Wanted list by loaned amount.
-
-Format: `sort`
-
-(See [Notes about the command formats](#note-command-format) and [Restrictions on the parameters](#restrictions))
-
-<box type="warning" seamless>
-
-**Warning**: The sort command changes the IDs of each entry. Be careful to use the correct IDs when editing or deleting entries.
 </box>
-
-**Explanations**:
-* Sort will sort the entries by current 'Loan Amount'
-* People with the highest loans will be sorted to the top of the Wanted list.
-
-> **Note:** Assume there are a list of names as follows:
->   (1.) John <br>
->           Remaining Loan Amount: 21.05 <br>
->           Total Loaned Amount: 23.05 <br>
->   (2.) Alex Yeoh <br>
->           Remaining Loan Amount: 0.00 <br>
->           Total Loaned Amount: 0.00 <br>
->   (3.) Bernice Chua <br>
->           Remaining Loan Amount: 21.05 <br>
->           Total Loaned Amount: 21.05 <br>
-
-**Scenario 1:** Sorting <br>
-
-**Input:** `sort`<br>
-
-**Output:**
-```output
-Sort success
-```
-
-**Behaviour:**
-- The entries will be sorted by highest total loan amount
-- The list of names will be reordered as follows.
->   (1.) John <br>
->           Remaining Loan Amount: 21.05 <br>
->           Total Loaned Amount: 23.05 <br>
->   (2.) Bernice Chua <br>
->           Remaining Loan Amount: 21.05 <br>
->           Total Loaned Amount: 21.05 <br>
->   (3.) Alex Yeoh <br>
->           Remaining Loan Amount: 0.00 <br>
->           Total Loaned Amount: 0.00 <br>
 
 <h3 id="delete">Deleting an entry: <code>delete</code></h3>
 
-Deletes the specified entry from the Wanted list.
+This command allows you to delete a specified entry from the Wanted list.
 
-Format: `delete [ID]`
+**Format:** `delete [ID]`
 
 (See [Notes about the command formats](#note-command-format) and [Restrictions on the parameters](#restrictions))
 
 <box type="warning" seamless>
 
-**Warning**: The list, sort, and find commands change the IDs of each entry. Be careful to use the correct IDs when editing or deleting entries.
+**Warning**: The `list`, `sort`, and `find` commands change the IDs of each entry. Be careful to use the correct IDs when editing or deleting entries.
 </box>
 
 **Explanations:**
 
-* Deletes the person at the specified `ID`.
-* The `ID` refers to the index number shown in the displayed persons list.
+* This command allows you to delete the entry at the specified `ID`. The ID refers to the index number shown in the displayed persons list.
 
 **Example:**
 
@@ -952,25 +958,25 @@ Format: `delete [ID]`
 Deleted Loan: Bernice Yu; Remaining Loan Amount: 40.49; Total Loaned Amount: 40.49; Phone Number: 20242025; Tags: [colleagues][friends]
 ```
 **Behaviour:**
-The second entry is deleted from the Wanted list.
+The second entry will be deleted from the Wanted list.
 </box>
 
 <h3 id="clear">Clearing all entries: <code>clear</code></h3>
 
-Clears all entries from the Wanted list.
+This command allows you to clear all entries from the Wanted list.
 
 <box type="warning" seamless>
 
 **Warning**: All loan entries will be wiped. This command is irreversible. You should exercise caution when running this command.
 </box>
 
-Format: `clear`
+**Format:** `clear`
 
 <h3 id="exit">Exiting the program: <code>exit</code></h3>
 
-Exits the program.
+This command allows you to exit the program.
 
-Format: `exit`
+**Format:** `exit`
 
 ### Saving the data
 
