@@ -16,12 +16,14 @@ Class UniqueLoanList
 Class Loan
 Class Name
 Class LoanAmount
+Class Phone
 Class Tag
 
-Class LoanTransaction
+Class "{abstract}\nLoanTransaction" as LoanTransaction
 Class AddLoanTransaction extends LoanTransaction
 Class RepayLoanTransaction extends LoanTransaction
 Class LoanDate
+Class MoneyInt
 
 Class I #FFFFFF
 }
@@ -39,9 +41,10 @@ ModelManager -right-> "1" UserPrefs
 UserPrefs .up.|> ReadOnlyUserPrefs
 
 LoanBook *--> "1" UniqueLoanList
-UniqueLoanList --> "~* all" Loan
+UniqueLoanList --> "~*   " Loan
 Loan *--> "1" Name
 Loan *--> "1" LoanAmount
+Loan *--> "0..1" Phone
 Loan *--> "*" Tag
 
 Loan -[hidden]up--> I
@@ -49,7 +52,8 @@ UniqueLoanList -[hidden]right-> I
 
 LoanAmount *-down-> "*" LoanTransaction
 LoanTransaction *-> "1" LoanDate
+LoanTransaction *-left> "1" MoneyInt
 
 
-ModelManager --> "~* filtered" Loan
+'ModelManager --> "~* filtered" Loan
 @enduml
